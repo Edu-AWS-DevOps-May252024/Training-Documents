@@ -1,0 +1,343 @@
+AWS DevOps Certification Programme
+Start Date : 25th May 2024
+
+######################
+Day 1 - 25th May 2024
+######################
+
+	What is DevOps ???
+	
+		- CI/CD 
+		
+	Why we need DevOps ?
+	
+	Benefits ?
+	
+	Why to used DevOps on Cloud ?
+	
+	
+	Software Development Lifecycle :::
+	
+	Software Application :::
+	
+		Desktop Applications
+		Web Applications
+		Mobile Applications
+		System Applications 
+		Embedded Applications 
+
+			Web Applications --> Online Training portal
+			Desktop Applications --> Billing System - Supermarket 
+						Requirement 
+							- Functions - 
+							= User Interface Design
+							- Inventory Management
+							- Billing 
+							- Payment
+							- Delivery
+
+	- Requirement Analysis 
+	- Design/Documentation
+	- Coding/Development 
+	- Testing 
+	- Implementation 
+	- Monitoring/Maintain
+	
+	Waterfall Model :
+		- It is linear in fashion 
+		- Strictly follows the Top-Down Approach
+		- Monolith Applications were developed using this Model
+		
+
+			Desktop Applications --> Billing System - Supermarket 	==> 12 Months 
+						Requirement 
+							- Functions 
+							- User Interface Design
+							- Inventory Management
+							- Billing 
+							- Payment -> cash/card/upi
+							- Delivery
+
+		Core-Project :  12 Months
+		- Requirement Analysis 
+		- Design/Documentation
+		- Coding/Development 			
+		- Testing 
+		- Implementation 
+		- Monitoring/Maintain		
+		
+		Enhancement-Project :  
+		- Requirement Analysis 
+		- Design/Documentation
+		- Coding/Development 			
+		- Testing 
+		- Implementation 
+		- Monitoring/Maintain	
+	
+	AGILE Methodologies ::: SDLC 
+
+			Desktop Applications --> Billing System - Supermarket 	==> 12 Months 
+						Requirement 
+							- Functions/Module --> Iterations 
+								- User Interface Design
+								- Inventory Management
+								- Billing 
+								- Payment -> cash			- New feature - /card/upi
+								- Delivery
+							
+		- Requirement Analysis 
+		- Design/Documentation
+		- Coding/Development 
+		- Testing 
+		- Implementation for further release with manual approvals
+		- Monitoring/Maintain
+
+		Iteration 1 - User Interface Design		- Developer1
+			- Requirement Analysis 
+			- Design/Documentation
+			- Coding/Development 
+			- Testing 
+			- Implementation for further release with manual approvals
+			- Monitoring/Maintain			
+
+		Iteration 2 - Inventory Management		- Developer2
+			- Requirement Analysis 
+			- Design/Documentation
+			- Coding/Development 
+			- Testing 
+			- Implementation for further release with manual approvals
+			- Monitoring/Maintain		
+
+		Iteration nth - New Feature
+			- Requirement Analysis 
+			- Design/Documentation
+			- Coding/Development 
+			- Testing 
+			- Implementation for further release with manual approvals
+			- Monitoring/Maintain
+			
+		Using AGILE Methodologies :
+		
+			We can able to achieve :
+			
+				- Continous Development 
+				- Continous Integration 
+				- Continous Testing 
+				- Continous Delivery
+					- It expects Manual Approvals for production release
+					- Might leads to downtime.
+			
+			We cannot achieve :
+			
+				- Continous Deployment
+					- It Doesn't expect any Manual Approvals for production release.
+					- Production Release can be fully automated without any manual intervension
+					- Zero Downtime.
+					
+					
+	DevOps :::
+	
+		DevOps is a Software Development Strategy/Process which helps to promote the collaboration between the teams like Development Team and Operations Team to achieve Continous Development, Continous Integration, Continous Testing, Continous Delivery, Continous Deployment and Continous Monitoring in more automated fashion.
+		
+	How to Implement DevOps ?
+	
+		Teams involved in SDLC Process :
+		
+			- DevOps Team :
+				- Infra-Structure Management Team   20 Test Servers -->
+				- Application Development Team 		
+				- Testing Team 
+				- Release Management Team
+				- Production Support Team 
+				- Production Monitoring Team 
+				- Security Administration Team 
+				
+			
+		DevOps Stages :	
+
+			- Continous Development :
+			
+				- It is a capability of the Development Team to Continously develop the Applications and improve the productivity of the Developers.
+				
+					Role of Developer :
+					
+						- Create Source Codes  
+						- Build the Code - Compile and create artifacts(Binaries - *.exec/*.dll/*.war/*.jar)
+						- Unit Testing 
+						- Promote the Changes to Test Environments for further Testing
+						- Notify the Testing Teams thru Email 
+						
+					On DevOps Perspective - Using DevOps Process ::
+					
+						- Create the Source Code
+						- Save/Commit the Source Code Changes to a Source Code Repository(GITHUB/GITLAB/AWS CodeCommit/Az Repo)
+						
+						Thru DevOps Tools Automate: 
+						
+						- Build the Code - Compile and create artifacts(Binaries - *.exec/*.dll/*.war/*.jar)
+						- Unit Testing 
+						- Promote the Changes to Test Environments for further Testing
+						- Notify the Testing Teams thru Email 
+
+					Tools :
+						
+						IDEs - Integrated Development Environments 
+						- Eclipse based IDEs, Visual Studio Code, Visual Studio, Pycharm
+						
+						- Build Tools - Maven/Gradle, .Net SDK, Python
+						
+						- Unit Testing Tools - Junit, TestNG - 20 Test Cases 
+			
+			- Continous Integration :
+				- It is a capability of the Development Team to Continously Integrate their code changes for further testing without impacting others' changes.
+
+						Thru DevOps Tools Automate: 
+						
+						- Save/Commit the Source Code Changes to a Source Code Repository(GITHUB/GITLAB/AWS CodeCommit/Az Repo)						
+						- Build the Code - Compile and create artifacts(Binaries - *.exec/*.dll/*.war/*.jar)
+						- Unit Testing 
+						- Promote the Changes to Test Environments for further Testing
+						- Notify the Testing Teams thru Email 
+						
+				- Tools :
+				
+					IDEs, Jenkins, AWS Code Pipeline, AWS CodeBuild, Docker, Kubernetes
+						
+			- Continous Testing :
+				- It is used to test and validate the code changes, Thru devops, we can integrate the testing tools and automate the end-to-end testing.
+				
+				Tools : Junit/TestNG/Selenium - Jenkins, AWS Pipeline
+			
+			- Continous Delivery / Deployment :
+			
+				- Both Continous Delivery/Deployment are used for Production Releases.
+	
+				- Continous Delivery :
+					- It expects Manual Approvals for production release
+					- Might leads to downtime.
+
+				Eg.: 
+				
+					Financial / Banking Domain - Core Business 
+					
+					Online Banking :::
+						Down the service - Production Release Window (Off-Business/Usage)
+						4 - 6 Hrs. 
+						Production Level Testing
+						- Fix the issue 
+						- Revert the changes under worst case
+
+					
+				- Continous Deployment :
+					- It Doesn't expect any Manual Approvals for production release.
+					- Production Release can be fully automated without any manual intervension
+					- Zero Downtime.	
+
+				- To Achieve Continous Deloyment the Application Architecture plays an important role.
+				
+					- Monolith Application Architecture
+						- It is a tightly coupled Application
+						- All the dependencies/functions are tightly coupled together
+					
+					- Micro-Service Based Application Architecture
+						- Loosely Coupled Applications
+						- All the dependencies/functions are considered as individual Micro-Service, which can be independently developed, build, testing and released to production.
+						
+				Continous Deployment can be achieved only using Micro-Service based Application Architecture
+				
+				Eg.: 
+				
+					Facebook/Netflix/amazon.com 
+					
+					Matured Level of DevOps using a complete Shift-Left Approach 
+			
+			
+				CI/CD Pipeline --> AWS Pipeline / Jenkins / gitlab-ci / Az Pipelines
+			
+			- Continous Monitoring :
+			
+				- This is to monitor the Infra-Structure and Applications running in Production Environments.
+				
+				Tools :
+							www.awazon.com --> 10000 users accessing the site 
+					
+					Production Support/Monitoring Team :
+					
+						Infra-Structure Monitoring
+							- AWS Cloud watch 
+							- Dynatrace / Prometheus / Grafana
+							
+						Applications Monitoring 
+							- App-Dynamics 
+							- Data-Dog
+			
+			- Infra-Structure Management Team :
+			
+				Provisioning/Creating the Servers 
+					- AWS Cloudformation / Terraform 
+				
+				Configure the Servers 
+					- AWS Cloudformation / Ansible / Chef / Puppet
+					
+		Environments :
+		
+			Non-Prod Environments													Production Environments 
+			
+				Dev Environment	(servers/VMs)
+				Build Environment
+				Test Environments
+					QA 
+					UAT									 =======>						Prod Environments 
+					
+	
+		DevOps Lifecyle :::
+		
+			Requirement Analysis		ALM Tools - Application Lifecycle Management Tools - JIRA/Az Boards
+			Design 
+			
+			Coding/Developement 		IDEs - Eclipse Based IDEs
+			
+			Build 
+			
+			Unit Testing 
+			
+			Promote the Changes to QA Environment
+			
+			QA Testing 
+			
+			Promote the Changes to UAT Environment
+			
+			UAT Testing 			
+			
+			Promote the Changes to PROD Environment
+			
+			PROD Level Testing 		
+			
+			Continous Monitoring 		AWS Cloud Watch -- gives some feedback
+			
+		
+			
+		DevOps Tools :
+
+			Open-Source DevOps Tools ::
+			
+				- Jenkins(CICD),GITHUB,Ansible,Docker,Kubernetes,Terraform,Prometheus,Grafana,Jfrog,JIRA
+				
+			Managed Services ::
+			
+				AWS 	--> AWS CodeCommit/CodePipeline/CodeBuild/CodeDeploy/CodeTest/CodeArtifacts/CodeStar/CodeGuru
+				
+				Azure 	--> Azure DevOps Service -- AzBoards/AzPipeline/AzTest/AzArtifacts/AzRepo
+				
+				GCP 	--> DevOps Service
+				
+				
+	
+	- Create GITHUB Account 					# https://github.com/
+	
+	- Install GIT Client in Local Machine 		# https://git-scm.com/downloads
+	
+	- Install Visual Studio Code 				# https://code.visualstudio.com/download
+	
+	- AWS Free-Tier Account						# https://aws.amazon.com/console/
+	
