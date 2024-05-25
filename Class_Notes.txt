@@ -341,3 +341,16 @@ Day 1 - 25th May 2024
 	
 	- AWS Free-Tier Account						# https://aws.amazon.com/console/
 	
+	
+	DevOps Team :
+	
+		DevOps Asso. --> Sr. DevOps Asso
+		DevOps Engg.  --> Sr. DEngg
+		DevOps Lead   --> Sr. DLead 
+		DevOps Architect --> Sr. DArchitect
+		DevOps Consultant --> Sr. DConsultant 
+		SRE 	
+	
+	- Scripting Languages :
+	
+		 - Shell Scripting / YAML / JSON / Python / Groovy
