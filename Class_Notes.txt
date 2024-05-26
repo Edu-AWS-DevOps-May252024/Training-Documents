@@ -354,3 +354,172 @@ Day 1 - 25th May 2024
 	- Scripting Languages :
 	
 		 - Shell Scripting / YAML / JSON / Python / Groovy
+
+######################
+Day 2 - 26th May 2024
+######################
+
+	- Create GITHUB Account 					# https://github.com/
+	
+	- Install GIT Client in Local Machine 		# https://git-scm.com/downloads
+	
+	- Install Visual Studio Code 				# https://code.visualstudio.com/download
+	
+	- AWS Free-Tier Account						# https://aws.amazon.com/console/
+	
+	
+	DevOps on Cloud :::
+	
+	AWS DevOps Services ::
+	
+			AWS 	--> AWS CodeCommit/CodePipeline/CodeBuild/CodeDeploy/CodeTest/CodeArtifacts/CodeStar/CodeGuru
+	
+			AWS Free-Tier Account		# https://aws.amazon.com/console/
+			
+			Login to AWS Console :::
+			
+				root user : Full Admin Access.
+					- Email_ID 
+					- Password
+			
+			
+			AWS Cloud Platform :::
+			
+				All the AWS Resources/Service 
+					Virtuals Machines/ Storage / Networking 
+					
+					Regions		- Different Geo. locations.
+						Availability Zones (Data Centres)
+						
+						
+						
+						Create VM ??? Terraform
+						
+				On-prem
+				
+				Multi-cloud --> AWS - cloudformation / Azure / IBM Cloud 
+				
+			Billing Dashboard 
+			Regions 
+			How to access various services 
+			Budgets 
+			
+				
+				
+		Security Management ::: 
+		
+			Client --> Enterprise level --> Create AWS Account - root access?
+						- Teams 
+						- Create individual User IDs/Groups/Roles/Policies --> IAM Service  
+						
+						- Code Commit - Maintain Source code Repos - Team						
+						
+			IAM Services --> 
+				
+				User 
+				Group 
+				Roles 
+				Policies 
+				
+			
+			RBAC :::	Role Base Access Control 
+			
+			Security Management :
+			
+				- Authentication 
+				
+				- Authorization 
+				
+				- Admin -> 
+				
+				
+			1. To Create IAM User & attach Admin policy 
+			2. Login thru this IAM User.
+			
+			CodeCommit/CodePipeline/CodeBuild/CodeDeploy
+			
+			
+			Policy ---> any group / user 
+			
+			At Enterprise Level :::
+			
+				users/groups 
+				
+				LDAP
+				
+				AD 
+				
+				SSO
+				
+				Any Applications --> 
+				
+			MFA Authentication ::::
+				
+				
+	DevOps On cloud ::
+	
+		AWS CodeCommit		- 	Used to Maintain the source code -- (compared with github/gitlab/az-repo)
+		
+		
+		
+		AWS CodeBuild 		-   Used to build the application - compile and create artifacts - *.war
+								Containers as well - Docker Container  - Build Application Image 
+													- ECS / ECR / EKS
+		
+		AWS CodeDeploy 		- 	Used to deploy the application to the target server - Web Application Servers 
+		
+		AWS CodePipeline 	- 	Is a called a Build Orchestration Tool 
+
+	
+
+	Code Commit :::
+	
+	
+		==> git file workflow :::
+		
+			Import any repository to AWS CodeCommit
+			
+			In github 			===> 		Clone this to local repository		====> 	Push to  AWS CodeCommit 
+			
+			git clone github_repo in local machine 
+			
+			push to aws codecommit repo 
+			
+			Push the local repository to AWS CodeCommit 
+			
+			
+			
+			Create New Project Repo in local machine using IDEs ===>  Push to  AWS CodeCommit 
+
+			
+			
+			Create : Project using Visual Studio Code.
+			
+			
+			- Create Empty Repo in AWS CodeCommit
+			
+			- Open git bash terminal / VS Code Project Folder Terminal 
+			
+			- git clone https://github.com/Edu-AWS-DevOps-May252024/devops-java-webapp.git
+			
+			- git remote add awsrepo1 https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/webapp1
+			
+			- git remote -v  
+			
+			- git push -u awsrepo1 master			# Push the changes to AWS CodeCommit Repo. 
+
+  533  mkdir javaapp1
+  534  cd javaapp1/
+  535  git clone https://github.com/Edu-AWS-DevOps-May252024/devops-java-webapp.git
+  536  cd devops-java-webapp/
+  549  git remote add awsrepo1 https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/webapp1
+  550  git remote -v
+  551  git push -u awsrepo1 master
+  552  cd ..
+  553  history
+			
+Next ::
+		Code Commit 		
+		Code Build 		
+		Code Deploy		
+		Code Artifacts
