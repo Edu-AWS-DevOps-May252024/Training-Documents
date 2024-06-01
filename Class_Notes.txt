@@ -523,3 +523,287 @@ Next ::
 		Code Build 		
 		Code Deploy		
 		Code Artifacts
+
+			
+######################
+Day 3 - 1st June 2024
+######################	
+
+	
+	SDLC Automation ::
+	
+		Code Build 
+		
+		Code Deploy 
+		
+		Code Artifacts are maintained in s3 
+		
+		Code Pipeline 
+		
+		
+		
+		
+		CICD Pipeline :::
+		
+			CI & CD
+			
+		DevOps Pipeline Workflow :::
+		
+			SCM-Checkout 
+			
+			Application Build (Build Server/Build Tool)
+			Container Images -- Application Image Build 
+			
+			Target Servers :	(QA/UAT/Prod)
+			Deployment (Deployment Servers/ Tools)
+			
+			
+			
+			
+		Code Commit :
+		
+		Code Build 	:
+		
+			- Self Hosted Nodes			
+			- Managed Nodes
+			
+		Code Deploy :
+		
+		
+		build server - install jdk, mvn, git, -- VM 
+		
+		codebuild server - Managed Image : 
+		
+		
+		
+		S3 Bucket ::
+		
+			loksai-webapp-s3-bucket
+			
+			loksai-webapp-dir1
+			
+			
+		source code repo:
+		
+		Visual Studio Code -> IDE 
+			
+			
+		loksai-webapp-cbproj1
+		
+		
+		
+		Code Build Project :  buildspec.yaml *****
+		
+		Maven Project ::
+		
+			Maven is build tool for java application build.
+			
+			
+			pom.xml  --> Used to maintain the dependencies/plugins the properties of the build
+			
+			maven Goal --> 
+			
+				compile 	==> Compile and throw the status
+				test 		==> Compile and perform unit testing 
+				package		==> Compile, test and create artifacts in the target
+				clean 		==> used to clean the target folder 
+				
+				
+			S3 AWS --
+			
+			Jfrog Artifactory 
+			
+			Az Artifacts
+			
+			*.war
+			
+			
+			Deploment Strategy ::::
+			
+			
+			In-Place Deployment Strategy 		
+
+				Deployment Group :						Upgrade to mywebapp_v2.0
+				
+														Phase1				Phase1
+				                                                            
+					serv1	mywebapp_v1.0				mywebapp_v2.0       mywebapp_v2.0
+					serv2	mywebapp_v1.0				mywebapp_v2.0       mywebapp_v2.0
+					serv3	mywebapp_v1.0				mywebapp_v1.0       mywebapp_v2.0
+					serv4	mywebapp_v1.0               mywebapp_v1.0       mywebapp_v2.0
+					serv5	mywebapp_v1.0               mywebapp_v1.0       mywebapp_v2.0			
+			
+			
+			
+			Blue-Green Deploment Strategy		
+			
+			
+				**LIVE Server:		5 server
+				
+				**mywebapp_v1.0					====>	mywebapp_v2.0	
+
+ 
+
+				PASSIVE Server :::
+			
+				mywebapp_v2.0					====> becomes ACTIVE/LIVE Server
+			
+			
+			Rolling-update Strategy
+			
+		
+		https://docs.aws.amazon.com/codedeploy/latest/userguide/resource-kit.html#resource-kit-bucket-names
+		
+		
+		Deployment 
+		
+	
+Next :::		
+
+	Environments ::
+	
+	dev 		coding 
+	
+	build 		build server created artifacts & saved in s3-bucket
+	
+	
+	Target server 
+		qa 			--> -- *.war 		- Tomcat Server 
+		
+		uat 
+		
+		prod 
+
+**************************************************************************************************************************
+
+
+#########################################################33
+
+
+craete aws repo 
+create s3 bucket 
+
+got to roles add codecommit to codebuild role
+
+			
+	webapps3-policy
+	
+	/opt codedeploy-agent
+	
+Create SRC_CODE REPO 
+
+Create s3 bucket 
+
+Build Project Role Name :
+	codebuild-sp-webapp-proj1-service-role
+
+sp-webapp-bucket
+sp-webapp-dir
+
+sp-webapp-proj1
+
+
+test the build
+
+Create a service role for codeDeploy.
+
+goto IAM Service 
+
+roles :
+
+create role - aws service -- Code Deploy --> add default permissions --> sp-webapp-cd-role
+verify trust relation
+
+Create an IAM Instance profile.
+
+
+create policy:
+
+JSON :
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": "*"
+        }
+    ]
+}
+
+sp-webapp-CD-EC2-Policy
+
+roles :
+
+Create Role for EC2 based on this CD-EC2-Policy
+
+create role - aws service - ec2 -- add cd-ec2-policy permission --> sp-webapp-CD-EC2-role
+
+create webapp server 
+
+attach iam policy 
+
+install jdk, tomcat and CD Agent 
+then validate 
+
+goto code deploy :
+
+create application 
+sp-webapp-test1
+
+Code Deployment Group
+
+got to application create deployment 
+
+in Revision location
+
+enter s3 bucket - dir - project and select copy s3 url
+
+sp-webapp-deploygrp1
+
+	AWS Code Pipeline 
+	
+	2. terraform / Cloudformation 
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
