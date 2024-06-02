@@ -676,8 +676,238 @@ Next :::
 
 **************************************************************************************************************************
 
+			
+######################
+Day 4 - 2nd June 2024
+######################	
 
-#########################################################33
+
+	AWS Code Deploy
+
+	AWS Code Pipeline 
+
+
+	Deployment :::
+	
+		Process of Copying application artifacts to the target environment
+		
+		s3 Bucket *.war		====> Copied the artifacts to Target Server --> /usr/share/tomcat/webapps
+		
+	
+		Launching***
+	
+		
+
+
+		https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
+		
+		Code_Deploy 
+		https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html
+		
+		s3://loksai-webapp-s3-bucket/loksai-webapp-dir1/loksai-webapp-cbproj1.zip
+		
+		
+		www.gmail.com 			ROOT - Index.html 
+			
+		inbox 				www.gmail.com/inbox		# Path based Routing
+		sent 
+		trash
+
+
+	Container Images :::
+	
+		ECS 
+		
+		ECR 
+		
+		EKS 
+		
+	Deployment :
+	
+		VM - EC2 Instance 
+		
+		Container 
+		
+		Lambda 
+		
+	IAC
+	
+	Deployment -- 
+	
+	Container ::
+	
+		Docker Containers & Container Images ????
+		
+		
+	Containerization :::
+		
+		- It is a process of packaging the application along with its dependencies.
+		
+		
+	Scenario 1 :
+	
+		Developers' Build/Deployment :	1 
+		
+			Eclipse IDE 		Dev Environment
+			
+				Create src code, version control it using git, integrate tomcat server and unit test my application in Local Machine.
+				
+					jdk17, tomcat8.5
+					
+					jdk11, tomcat9
+					
+					Openjdk11, tomcat10
+				
+					Build - Artifact  								mywebapp.war 
+					
+					
+					create code
+					
+					build  --			 mywebapp.war_v1.0 
+					
+					
+						Package (mywebapp.war_v1.0,jdk17, tomcat8.5)		---> mywebapp_img:v1.0
+
+						Package (mywebapp.war_v1.0,jdk11, tomcat7)			---> mywebapp_img:v2.0
+
+						Package (mywebapp.war_v1.0,Openjdk17, tomcat9)		---> mywebapp_img:v3.0
+						
+						ECS :
+						
+						This Image will be stored/Version Controlled in the Container Registry(ECR,DockerHub)
+				
+				Promote the changes to target environment 
+				
+				QA Environment 		--> jdk8, tomcat7 -->	jdk, tomcat	 ---> 	mywebapp.war  - jdk17, tomcat8.5
+				
+									mywebapp_img:v1.0			
+				
+				Monolith --> 
+				
+							-- Compatibility issue. 
+							
+							
+			Working with Containerization :::
+			
+				Terminologies :::
+				
+					Image 					: 	A Static File that defines the application and its dependencies
+												It is Non-Executable 
+												It composed of various layers / Instructions
+								
+					Container 				:	Executable of Container Images
+					
+					Container Engine 		:	Used to Create/Manage the Container Images and Containers 
+												Docker Engine 
+										
+					Container Registry 		:	Is to manage/version control the Container Images 
+												Dockerhub / ECR 
+											
+					Container Repository	:	Subset of Container Registry
+					
+					
+		
+	Scenario 2 :
+	
+		Infra-Structure Perspective :
+		
+			Containerization :::
+				- Is used to reduce the no. of VMs 
+		
+		Build Server :::	Code Build 
+		
+				VM - Build Server 
+					Install Container Engine 
+					
+						- Container1 - jdk
+						- Container2 - .net
+		
+			50 Types of Applications to be built
+			
+				jdk
+				.net 
+				python
+				angular
+				nodejs 
+		
+		Deployment Server :::	Code Deploy
+		
+				jdk
+				.net 
+				python
+				angular
+				nodejs 		
+				
+
+		DevOps Team 
+		
+		CI-CD 
+			Container & Kubernetes Tools 
+		
+		Infra-Structure		
+			Terraform 
+
+
+		Virtual Machine :::
+			- VMs are Hardware level Virtualization 
+			- VMs are used to run the Operating System
+			- It consume more space and time to start the Application
+			- VM will be consuming the resources, even if there is not task/application running 
+		
+		Container :::
+		
+			- Containers are OS level Virtualization
+			- It is used to run the Application/Task. NOT to run Operating System
+			- Once the Application/Task is completed it will immediately go to exit state and release all the resources
+			
+		
+		
+		How to Create/Build Container Images :::
+		
+			Input : *.war ==> Artifacts - s3 Bucket 
+			
+			Image Build : 
+			
+				Dockerfile / ImageBuildfile :::
+					- Composed of various instructions to build the layers of Image.
+					- will be part of the sourcecode repository
+					
+					ECS :::
+					
+					Instruction to build the Image:
+					
+					FROM 		# Used to Identify the base Image 
+					
+					COPY 		# Copy the files/artifacts from the host volume to container volume
+
+					CP 			# Copy the files/folders within the container volume
+					
+					ADD			# Copy the files/artifacts from the host volume to container volume
+								# Copy the files/folders from Internet to container volume 
+								
+					WORKDIR		# used identify the current working dir
+					
+					EXPOSE 		# to expose the container port
+					
+					ENV 		# Used to have Environmental variable 
+					
+					RUN			# Run/Execute the package managers like yum/apt/dnf
+					
+					CMD			# Set the start-up/task command to the container
+								# It can be change at run-time 
+					
+					ENTRYPOINT	# Set the start-up/task command to the container
+								# It cannot be changed at run-time 
+					
+					
+					
+					image_name:v1
+					
+					
+					
+					ENTRYPOINT echo "Hello"
+
+#########################################################
 
 
 craete aws repo 
