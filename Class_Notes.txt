@@ -1178,6 +1178,404 @@ IAC - Infra-Structure As Code - Tools :::
 
 
 
+Deployment using EBS 
+
+Cloud Formation Templates - Create Infra-Structure
+
+AWS OpsWork - Configuration Management Tool
+
+chef / puppet 
+Ansible 
+
+Notification Monitoring and Logging 
+
+Ensure Highly Available and Fault Tolerant System
+
+
+
+Elastic Block Store 	- used for storage volumes  	
+
+Elastic Beanstalk 		_ used for deployment 
+
+java src_code 
+*.war 			- to deploy this app I need environment - ec2 inst, ebs, s3, load balancer, resource groups,
+																- Auto-scaling group
+
+
+*.zip -- Application Bundle
+
+Create : using IAM Console
+aws-elasticbeanstalk-ec2-role
+
+
+Create Fault Tolerant System using Infra-Structure :::
+
+AMI -! 
+
+
+Monitoring and Logging Tools ::::
+
+
+Deployment Strategies:
+
+	- Rolling update 
+	
+	- Blue-Green Deployment 
+
+
+Notification Monitoring and Logging 
+
+1 create email subcription
+
+2. Topic
+
+3. role 
+
+3. Cloud Watch 
+
+
+
+
+
+
+
+
+AWS DevOps Certification !
+	
+	- Experience - Hands-On 
+	
+	- Projects - Use-Cases 
+	
+
+
+	AWS OpsWork :::
+	
+	How to run 100s' servers with same config ???
+
+	
+	1. Custom AMI - 20+ properties			-- 100 VMs + 10 Properties
+	
+		Create a New AMI with 10+properties
+	
+	2. Server Templating - 20+ properties	-- 100 Container Images  + 10 Properties
+	
+	
+	AWS OpsWork --> chef/puppet ::: Configuration Management Tool --> 
+	
+	Ansible :
+	
+	Terraform (Multi-cloud-Hybrid) / cloudformation(AWS) :
+	
+	CICD Pipeline ::
+	
+	GitOps :::
+	
+	DevOps --> GitOps 
+	
+		Provisioning and Configuring the Server Resources thru DevOps Pipeline as Code.
+		
+	DevOps :	
+		CI-CD --> 
+		
+	Infra-Structure as Code : IAC Tool 
+	
+	
+	Jenkins / Azure DevOps -- Pipeline 
+	
+	Pipeline Job :
+	
+		Server Provisioning
+		
+		Server Configuration
+		
+		CI-CD
+		
+		
+		Dev Environment
+		
+		Build Environment
+		
+		Test Environments							Prod Environment
+		
+		
+	Self-Hosted Nodes Dynamically
+		
+	Pipeline1:
+
+		SCM_Checkout 	--> Provision the server(CFT / Terraform) --> Configure the server(Ansible / Opswork/Chef/puppet) 
+				
+			
+	Pipeline2: 
+	
+		CICD 
+		
+		SCM-Checkout --> Application Build --> Create Artifacts --> Promote the changes to Test Server --> Perform QA  Testing 
+		
+		
+	Scenario 2 :
+	
+	Pipeline -- GitOps
+	
+		SCM_Checkout 
+		||
+		||
+		Application Build 
+		||
+		||
+		Provision the Test Server(Cloudformation Template / Terraform)
+		||
+		||
+		Configure the Server
+		||
+		||
+		Deploy to Test Server
+		||
+		||
+		Automate Testing 
+		||
+		||
+		Share the Test Feedback
+		||
+		||
+		Delete the Test Server
+		
+		
+		Authentication :::
+		
+			Linux Machine -- Builds and Deployments
+			
+			Types of Authentication :
+			
+			SSH - Secure Shell Connection :
+			
+				- Password based Authentication
+				
+				- SSH Key based Authentication***
+				
+				- Token based Authentication***
+				
+				- Passwordless Authentication
+				
+		IAC Tool - Terraform/Cloudformation 
+		
+		
+		Deployment - Mirco-Service Based Architecture 
+		
+		Terraform  - Kubernetes 
+		
+		Branches 
+		
+		AWS CodeCommit/Pipeline/Build/Deploy/Artifacts  - JIRA
+		
+		Infra-Structure :
+		IAC 
+		
+		CF IAM 
+		
+		AZURE DevOps Services - Az Board/Az Repo/Pipeline/Test/Artifacts
+		
+		Generic DevOps ???
+		
+		Open-Source DevOps :
+		
+		Kubernetes ::: 	--> Kubernetes Certified Developer/Admin/Security Admin
+		
+		AWS/Az/GCP/Digital
+		
+		AWS DevOps Service: --> job - Project Azure DevOps Services 
+		
+		Interview Perspective :::
+		
+			DevOps :
+			
+				Automate CICD 	 - Jenkins / AWS CodePipeline / Az Pipeline 
+				
+				IAC Tools 		 - Ansible / Terraform 
+				
+				Containerization - Docker / Kubernetes - ECS/ECR/EKS(Paid Service) 
+				
+				
+				Monitoring :
+				
+					Infra-Structure Monitoring - AWS Cloudwatch/Trail, Dynatrace, Prometheus, Splunk, Nagios, Grafana 
+					
+					Application Monitoring	- DataDog, AppDynamics
+					
+				Monolith Application Architecture ::
+				
+					_ We can Implement DevOps 
+					
+					_ Automate - Continous Developement/Integration/Testing/Delivery
+					
+					
+		Teams involved in SDLC Process :
+		
+			- DevOps Team :
+				- Infra-Structure Management Team   20 Test Servers -->
+				- Application Development Team 		
+				- Testing Team 
+				- Release Management Team
+				- Production Support Team 
+				- Production Monitoring Team 
+				- Security Administration Team 
+		
+				
+		DevOps 
+		
+		DevSecOps
+		
+		Waterfall, Agile, DevOps, DevSecOps, GitOps, SRE, AIOps, MLOps
+		
+		Shell Scripting, Groovy, *.yaml, Python
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
